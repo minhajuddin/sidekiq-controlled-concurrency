@@ -25,8 +25,9 @@ concurrency at this stage is set to 0
 ```
 # 3. ruby console
 $ bundle exec irb
+> require_relative './app.rb'
 # set the concurrency to 3
-> ControlledEnqueue.increase_concurrency(3)
+> ControlledEnqueue.setup(concurrency: 3)
 ```
 
 Now you should see 3 jobs enqueuing at a time

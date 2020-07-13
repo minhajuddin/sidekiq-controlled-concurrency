@@ -8,13 +8,13 @@ module ControlledEnqueue
 
   LIST_NAME = "migrate"
 
-  def setup(conncurrency:)
+  def setup(concurrency:)
     slot_count = Redis.current.llen(LIST_NAME)
     raise "Key '#{LIST_NAME}' is being used, it already has #{slot_count} slots" if slot_count > 0
 
-    Redis.current.lpush(LIST_NAME, conncurrency.times.to_a)
+    Redis.current.lpush(LIST_NAME, concurrency.times.to_a)
 
-    puts "set up to have a conncurrency of #{conncurrency} slots"
+    puts "set up to have a concurrency of #{concurrency} slots"
   end
 
   def increase_concurrency(n = 1)

@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     connection_pool (2.2.3)
-    rack (2.2.3)
+    rack (2.2.6.4)
     redis (4.2.1)
     sidekiq (6.1.0)
       connection_pool (>= 2.2.2)
